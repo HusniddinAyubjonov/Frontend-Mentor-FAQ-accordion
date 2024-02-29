@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*Composition*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*Box Model*/
+    min-height: 100vh;
+
+    /*Visual*/
+    background: hsl(275, 100%, 97%) url('img/background-pattern-mobile.svg') no-repeat;
+    background-size: 100vw;
+
+    /*Typhpgraphy*/
+    font-family: Work Sans;
+}
+
+main {
+    /*Box Model*/
+    max-width: 87vw;
+    padding: min(6.5vw, 40px);
+
+    /*Visual*/
+    background: hsl(0, 0%, 100%);
+    border-radius: min(2.13vw, 15px);
+}
+
+h1,
+summary {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    /*Composition*/
+    column-gap: 24px;
+
+    /*Typhography*/
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw + 1rem, 3.8rem); /*Between 32px and 60.8px (normal)*/
+}
+
+h1 img {
+    width: clamp(1.55rem, 2vw + 1rem, 2.55rem); /*Between 24.8px and 40.8px (normal)*/
+}
+
+details {
+    /*Box Model*/
+    padding-top: min(6vw, 25px);
+    padding-bottom: min(6vw, 25px);
+
+    /*Visual*/
+    border-bottom: 1px solid hsl(275, 100%, 97%);
+}
+
+details:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+summary {
+    /*Composition*/
+    justify-content: space-between;
+    column-gap: 30px;
+
+    /*Typhography*/
+    font-weight: 600;
+    font-size: clamp(.99rem, 1vw + .75rem, 1.175rem); /*Between 15.84px and 18.8px*/
+}
+
+details summary::marker {
+    content: '';
+}
+
+h1,
+summary {
+    color: hsl(292, 42%, 14%);
+}
+
+p {
+    /*Box Model*/
+    padding-top: min(5vw, 20px);
+    max-width: 541px;
+
+    /*Visual*/
+    color: hsl(292, 16%, 49%);
+
+    /*Typography*/
+    font-weight: 400;
+    font-size: clamp(.87rem, 1vw + 0.625rem, 1.04rem); /*Between 13.92px and 16.64px*/
+    line-height: 1.4;
+}
+
+@media screen and (min-width: 600px) {
+    body { 
+        background-image: url('img/background-pattern-desktop.svg');
+    }
+}
+
+@media (hover: hover) {
+    summary:hover {
+        color: #AD28EB;
+        cursor: pointer;
+    }
+}
